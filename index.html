@@ -29,9 +29,7 @@
     </div>
   </div>
 </nav>
-
 <!--nav end-->
-
 
 <!--Hero section-->
 <section class="hero" data-0="background-position:0px 0px;" data-500="background-position:0px -250px;" id="Home">
@@ -49,7 +47,7 @@
         <!--welcome message end-->
 
         <!--action button-->
-        <div class="action-button"> <a href="#Sinossi" class="button learn-more text-center">Scropri il romanzo <i class="fa fa-arrow-right"></i></a> <a href="#" class="button buy text-center">Acquista <i class="fa fa-shopping-cart"></i></a>
+        <div class="action-button"> <a href="#Sinossi" class="button learn-more text-center">Scropri il romanzo <i class="fa fa-arrow-right"></i></a> <a href="#Buy" class="button buy text-center">Acquista <i class="fa fa-shopping-cart"></i></a>
           <p><b>Richiedi la tua copia con dedica direttamente all'autore, la spedizione è gratuita!</b></p>
         </div>
         <!--action button end-->
@@ -118,14 +116,23 @@ Trovare un editore non è stato semplice, e solo nel 2017 la casa editrice “Ro
     </div>
   </div>
 </section>
-
 <!--Author end-->
 
 <!--buy now-->
 <div class="buy-now text-center" id="Buy">
   <div class="container">
     <div class="row">
-      <div class="col-md-12"> <a href="#" class="button buy">Acquista con Paypal <i class="fa fa-shopping-cart"></i></a> </div>
+      <div class="col-md-12">
+        <form method="get" action="">
+        </form>
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="FRRK82BRTZFDQ">
+
+          <button class="button buy">Acquista con Paypal <i class="fa fa-shopping-cart"></i></button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
@@ -144,7 +151,6 @@ Trovare un editore non è stato semplice, e solo nel 2017 la casa editrice “Ro
   </div>
 
   <!--address-->
-
   <ul class="address row text-center">
     <li class="col-sm-4"><i class="fa fa-map-marker"></i>
       <h4>Indirizzo</h4>
@@ -159,7 +165,6 @@ Trovare un editore non è stato semplice, e solo nel 2017 la casa editrice “Ro
       <p>info@sitename.com</p>
     </li>
   </ul>
-
   <!--address end-->
 
 </section>
