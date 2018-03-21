@@ -747,8 +747,8 @@ button.close {
 
 .scroll-top a {
   position: fixed;
-  bottom: 2em;
-  right: 2em;
+  bottom: 1.5em;
+  right: 1.5em;
   text-decoration: none;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.3);
