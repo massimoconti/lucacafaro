@@ -132,9 +132,6 @@ Trovare un editore non è stato semplice, e solo nel 2017 la casa editrice “Ro
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <form method="get" action="">
-        </form>
-
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick">
           <input type="hidden" name="hosted_button_id" value="FRRK82BRTZFDQ">
@@ -147,7 +144,6 @@ Trovare un editore non è stato semplice, e solo nel 2017 la casa editrice “Ro
 </div>
 <!--buy now end-->
 
-<!--contact
 <section class="contact section-spacing" id="Contact">
   <div class="container">
     <header class="text-center">
@@ -155,11 +151,36 @@ Trovare un editore non è stato semplice, e solo nel 2017 la casa editrice “Ro
     </header>
     <div class="row">
       <div class="col-md-8 col-sm-11 center-block">
+
+        <form id="contatto">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="nome">Il tuo nome</label>
+              <input type="text" class="form-control" name="nome" id="nome" placeholder="Il tuo nome">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="email">La tua email</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="La tua email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="oggetto">Oggetto</label>
+            <input type="text" name="oggetto" class="form-control" id="oggetto" placeholder="Oggetto">
+          </div>
+          <div class="form-group">
+            <label for="messaggio">Messaggio</label>
+            <textarea name="messaggio" class="form-control" id="messaggio"></textarea>
+          </div>
+
+          <div class="g-recaptcha" data-sitekey="6Lfej04UAAAAANqiUN449d6msIBPCzNkOvezZslF"></div>
+
+          <br><button type="submit" class="btn btn-default">Invia</button>
+        </form>
+
       </div>
     </div>
   </div>
 </section>
-contact end-->
 
 <!--site-footer-->
 <footer class="site-footer section-spacing">
@@ -193,6 +214,25 @@ contact end-->
 <script src="js/scripts.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/cookielaw.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+$(function(){
+  $('#contatto').on('submit', function(){
+
+    $.ajax({
+      method: 'post',
+      url: '_contatto.php',
+      data: $(this).serialize(),
+      dataType: 'json',
+      success: function(response){
+        alert(response.msg)
+      }
+    });
+
+    return false;
+  });
+});
+</script>
 
 </body>
 </html>
